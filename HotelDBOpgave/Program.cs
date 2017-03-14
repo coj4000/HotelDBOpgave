@@ -24,16 +24,19 @@ namespace HotelDBOpgave
                     Console.WriteLine("Hotel no: " + item.Hotel_No + " Navn: " + item.Name + " Address: " + item.Address);
                 }
 
-                Console.WriteLine("Press any key to exit...");
+                Console.WriteLine("Press any key to go to Guest...");
                 Console.ReadKey();
 
                 var query2 = from g in db.Guest
                     select g;
-
+                Console.WriteLine("Gæster:");
                 foreach (var item in query2)
                 {
-                    Console.WriteLine();
+                    Console.WriteLine("Guest no; " + item.Guest_No + " Guest Navn: " + item.Name + " Guest Adress " + item.Address);
                 }
+
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
             }
         }
     }
